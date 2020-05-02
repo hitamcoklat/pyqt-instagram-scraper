@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>510</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Submit</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>510</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Cancel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>90</y>
+      <width>691</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Lorem ipsum dolor sit amet, ne eam alia quidam inimicus, in mei audiam discere omittantur. Ex detracto voluptatum duo, cu vix nibh tritani delicata, mel ea malis lucilius. Quod persequeris ut per, vel id iudico impetus, dolor possit in vel. Sit probo altera indoctum ex. Vel ea iuvaret copiosae menandri, ut pro omittam oporteat.
+
+Cibo legimus placerat pro in, in pri causae labores, ut mei etiam aperiam consequuntur. Has in copiosae scaevola concludaturque. Duo ei stet scripta, te sit choro eruditi. Sed cu erant mucius eleifend, eu populo viderer nusquam mei. Id eam enim perpetua. Amet decore soleat pri ea, erat atomorum vix ad, viris invenire ex mea. Vis ex nominavi conceptam, et vix etiam mediocritatem, has malis saepe et.
+
+Ut sea laoreet complectitur. Latine recteque ea has, est nostrum principes at, alii mundi assentior te sea. Te duo dicat solet. Ne purto novum forensibus pri, eu vis quodsi hendrerit. Alii consectetuer ei eos. Nam no quem quod legere.
+
+Nec at lobortis praesent, ad iisque fabellas elaboraret vim. No nostrud senserit sed. Dolores lobortis no his. Liber iriure nam et, solet commodo usu ne. No nec stet equidem intellegam, cu liber bonorum per. Ex vel animal definiebas, fierent accusata similique et eum. Viris populo pericula est an, ad usu audiam tamquam intellegam.
+
+Ne nominavi maluisset salutatus sed, usu id persecuti interpretaris. Dicam necessitatibus eos ne. Incorrupte intellegam ad quo. Audiam feugiat feugait ne usu.</string>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
