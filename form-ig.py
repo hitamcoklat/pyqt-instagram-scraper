@@ -11,7 +11,7 @@ from PySide2 import QtCore, QtGui, QtWidgets
 from PySide2.QtWidgets import QProgressBar, QMessageBox
 from PySide2.QtCore import QBasicTimer
 from lib.ig_scrapper import IGScrapper
-import threading
+import csv
 import time
 
 class Ui_MainWindow(object):
@@ -38,7 +38,7 @@ class Ui_MainWindow(object):
         self.btn_submit.setText("Submit")
         self.tableWidget.setRowCount(0)
         self.tableWidget.setColumnCount(5)
-        self.tableWidget.setHorizontalHeaderLabels(['Link Instagram', 'Jml. Likes', 'Jml. Comments', 'Engagement', 'Caption'])
+        self.tableWidget.setHorizontalHeaderLabels(['Link Instagram', 'Jml. Likes', 'Jml. Comments', 'Caption', 'Hashtags'])
 
         self.header = self.tableWidget.horizontalHeader()
         self.header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
@@ -54,27 +54,36 @@ class Ui_MainWindow(object):
         row = 0
         for val in self.dataMedia:
 
-
-
-            self.engagement = (val["numberOfLikes"] + val["numberOfComments"]) / 327
-            self.engagement = "%.2f" % self.engagement + "%"
-
             self.tableWidget.insertRow(row)
 
             self.tableWidget.setItem(row, 0, QtWidgets.QTableWidgetItem(str(val["linkInstagram"])))
             self.tableWidget.setItem(row, 1, QtWidgets.QTableWidgetItem(str(val["numberOfLikes"])))
             self.tableWidget.setItem(row, 2, QtWidgets.QTableWidgetItem(str(val["numberOfComments"])))
-            self.tableWidget.setItem(row, 3, QtWidgets.QTableWidgetItem(str(self.engagement)))
-            self.tableWidget.setItem(row, 4, QtWidgets.QTableWidgetItem(str(val["caption"])))
+            self.tableWidget.setItem(row, 3, QtWidgets.QTableWidgetItem(str(val["caption"])))
+            self.tableWidget.setItem(row, 4, QtWidgets.QTableWidgetItem(str(val["hashtags"])))
             print(val["linkInstagram"])
             row = row + 1
             print(row)
 
+    def exportCSV(self):
+        print('print ke excell')
+
+        with open('data-scrape.csv', 'w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(["No", "LINK INSTAGRAM", "JML. LIKE", "JML. COMMENT", "CAPTION", "HASHTAG"])
+
+            row = 1
+            for val in self.dataMedia:
+                writer.writerow([row, val["linkInstagram"], val["numberOfLikes"], val["numberOfComments"], val["caption"], val["hashtags"]])
+                row = row + 1
+
+    def exportTXT(self):
+        print('print ke text')
+        with open("data-scrape-caption.txt", "a") as myfile:
+            for val in self.dataMedia:
+                myfile.write(val['caption'].lstrip().rstrip('\r\n'))
 
     def setupUi(self, MainWindow):
-        submitLabel = "Submit"
-
-
 
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(903, 575)
@@ -177,14 +186,18 @@ class Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
+
         self.actionExit = QtWidgets.QAction(MainWindow)
         self.actionExit.setObjectName("actionExit")
+        # self.actionExit = Q
+
         self.actionTable = QtWidgets.QAction(MainWindow)
         self.actionTable.setObjectName("actionTable")
         self.actionChart = QtWidgets.QAction(MainWindow)
         self.actionChart.setObjectName("actionChart")
         self.actionAbout = QtWidgets.QAction(MainWindow)
         self.actionAbout.setObjectName("actionAbout")
+
         self.menuExit.addAction(self.actionExit)
         self.menuView.addAction(self.actionTable)
         self.menuView.addAction(self.actionChart)
@@ -192,6 +205,8 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuExit.menuAction())
         self.menubar.addAction(self.menuView.menuAction())
         self.menubar.addAction(self.menuAbout.menuAction())
+
+        # self.actionTable.trigger(self.exportCSV)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -210,17 +225,26 @@ class Ui_MainWindow(object):
         self.menuView.setTitle(_translate("MainWindow", "Tools"))
         self.menuAbout.setTitle(_translate("MainWindow", "Help"))
         self.actionExit.setText(_translate("MainWindow", "Exit"))
-        self.actionTable.setText(_translate("MainWindow", "Table"))
-        self.actionChart.setText(_translate("MainWindow", "Chart"))
+        self.actionTable.setText(_translate("MainWindow", "Export CSV"))
+        self.actionChart.setText(_translate("MainWindow", "Export Caption to TXT"))
         self.actionAbout.setText(_translate("MainWindow", "About"))
+
+        # self.actionTable.cl
+
+class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
+
+    def __init__(self, parent=None):
+        super(MainWindow, self).__init__(parent)
+        self.setupUi(self)
+        self.actionTable.triggered.connect(self.exportCSV)
+        self.actionChart.triggered.connect(self.exportTXT)
+        self.actionExit.triggered.connect(self.close)
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
+    w = MainWindow()
+    w.show()
 
-    MainWindow.show()
     sys.exit(app.exec_())

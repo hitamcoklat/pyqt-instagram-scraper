@@ -1,5 +1,6 @@
 from igramscraper.instagram import Instagram
 from time import sleep
+import re
 
 class IGScrapper:
 
@@ -26,6 +27,7 @@ class IGScrapper:
     def get_medias_by_tag(tag_name, jmlData):
         instagram = Instagram()
         medias = instagram.get_medias_by_tag(tag_name, count=jmlData)
+
         dataMedia = []
         try:
             for x in range(0, jmlData):
@@ -33,14 +35,13 @@ class IGScrapper:
                     'linkInstagram': 'http://www.instagram.com/p/' + medias[x].short_code,
                     'numberOfLikes': medias[x].likes_count,
                     'numberOfComments': medias[x].comments_count,
+                    'hashtags': re.findall(r"#(\w+)", medias[x].caption),
                     'caption': medias[x].caption
                 })
         except IndexError as x:
             pass
 
         return dataMedia
-
-
 
     def get_account_medias_by_username(username, jmlData):
         instagram = Instagram()
@@ -53,6 +54,7 @@ class IGScrapper:
                     'linkInstagram': 'http://www.instagram.com/p/' + medias[x].short_code,
                     'numberOfLikes': medias[x].likes_count,
                     'numberOfComments': medias[x].comments_count,
+                    'hashtags': re.findall(r"#(\w+)", medias[x].caption),
                     'caption': medias[x].caption
                 })
         except IndexError as x:
