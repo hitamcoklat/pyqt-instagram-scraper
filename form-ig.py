@@ -8,13 +8,20 @@
 
 
 from PySide2 import QtCore, QtGui, QtWidgets
-from PySide2.QtWidgets import QProgressBar, QMessageBox
-from PySide2.QtCore import QBasicTimer
 from lib.ig_scrapper import IGScrapper
 import csv
 import time
+from second_page import SecondPage
+from dialog_about import Ui_AboutWindow
 
 class Ui_MainWindow(object):
+
+    def openWindowAbout(self):
+        print('open window about')
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_AboutWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
 
     def loadDataInstagram(self):
 
@@ -77,11 +84,25 @@ class Ui_MainWindow(object):
                 writer.writerow([row, val["linkInstagram"], val["numberOfLikes"], val["numberOfComments"], val["caption"], val["hashtags"]])
                 row = row + 1
 
+        self.showDialogExport()
+
     def exportTXT(self):
         print('print ke text')
         with open("data-scrape-caption.txt", "a") as myfile:
             for val in self.dataMedia:
                 myfile.write(val['caption'].lstrip().rstrip('\r\n'))
+
+        self.showDialogExport()
+
+    def showDialogExport(self):
+        msg = QtWidgets.QMessageBox()
+        msg.setIcon(QtWidgets.QMessageBox.Information)
+
+        msg.setText("Data berhasil di export!")
+        msg.setInformativeText("File disimpan di folder tempat aplikasi ini berada.")
+        msg.setWindowTitle("Info")
+        msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
+        msg.exec_()
 
     def setupUi(self, MainWindow):
 
@@ -229,7 +250,6 @@ class Ui_MainWindow(object):
         self.actionChart.setText(_translate("MainWindow", "Export Caption to TXT"))
         self.actionAbout.setText(_translate("MainWindow", "About"))
 
-        # self.actionTable.cl
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
@@ -239,7 +259,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.actionTable.triggered.connect(self.exportCSV)
         self.actionChart.triggered.connect(self.exportTXT)
         self.actionExit.triggered.connect(self.close)
-
+        self.actionAbout.triggered.connect(self.openWindowAbout)
 
 if __name__ == "__main__":
     import sys
