@@ -66,7 +66,7 @@ class Ui_AboutWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Tentang Aplikasi"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "About"))
         self.label.setText(_translate("MainWindow", "Instagram Scraper Lite Version."))
         self.label_3.setText(_translate("MainWindow", "Versi 0.3"))
         self.label_4.setText(_translate("MainWindow", "Kritik dan Saran bisa kirim ke"))
