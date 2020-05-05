@@ -48,7 +48,7 @@ class Ui_AboutWindow(object):
         self.label_7 = QtWidgets.QLabel(self.centralwidget)
         self.label_7.setGeometry(QtCore.QRect(60, 70, 281, 181))
         self.label_7.setText("")
-        self.label_7.setPixmap(QtGui.QPixmap("logo-ig-scraper.jpg"))
+        self.label_7.setPixmap(QtGui.QPixmap("assets/logo-ig-scraper.jpg"))
         self.label_7.setScaledContents(True)
         self.label_7.setWordWrap(False)
         self.label_7.setObjectName("label_7")
