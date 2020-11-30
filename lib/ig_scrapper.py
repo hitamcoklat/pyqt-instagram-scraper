@@ -35,7 +35,7 @@ class IGScrapper:
                     'linkInstagram': 'http://www.instagram.com/p/' + medias[x].short_code,
                     'numberOfLikes': medias[x].likes_count,
                     'numberOfComments': medias[x].comments_count,
-                    'hashtags': re.findall(r"#(\w+)", medias[x].caption),
+                    'hashtags': re.findall(r"#(\w+)", str(medias[x].caption)),
                     'caption': medias[x].caption
                 })
         except IndexError as x:
@@ -54,7 +54,7 @@ class IGScrapper:
                     'linkInstagram': 'http://www.instagram.com/p/' + medias[x].short_code,
                     'numberOfLikes': medias[x].likes_count,
                     'numberOfComments': medias[x].comments_count,
-                    'hashtags': re.findall(r"#(\w+)", medias[x].caption),
+                    'hashtags': re.findall(r"#(\w+)", str(medias[x].caption)),
                     'caption': medias[x].caption
                 })
         except IndexError as x:

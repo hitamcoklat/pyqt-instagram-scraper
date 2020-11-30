@@ -75,14 +75,17 @@ class Ui_MainWindow(object):
     def exportCSV(self):
         print('print ke excell')
 
-        with open('data-scrape.csv', 'w', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow(["No", "LINK INSTAGRAM", "JML. LIKE", "JML. COMMENT", "CAPTION", "HASHTAG"])
+        try:
+            with open('data-scrape.csv', 'w', newline='') as file:
+                writer = csv.writer(file)
+                writer.writerow(["No", "LINK INSTAGRAM", "JML. LIKE", "JML. COMMENT", "CAPTION", "HASHTAG"])
 
-            row = 1
-            for val in self.dataMedia:
-                writer.writerow([row, val["linkInstagram"], val["numberOfLikes"], val["numberOfComments"], val["caption"], val["hashtags"]])
-                row = row + 1
+                row = 1
+                for val in self.dataMedia:
+                    writer.writerow([row, val["linkInstagram"], val["numberOfLikes"], val["numberOfComments"], val["caption"], val["hashtags"]])
+                    row = row + 1
+        except UnicodeEncodeError as x:
+            pass
 
         self.showDialogExport()
 
@@ -158,7 +161,7 @@ class Ui_MainWindow(object):
         self.input_jml_data.setGeometry(QtCore.QRect(550, 440, 101, 41))
         self.input_jml_data.setToolTip("")
         self.input_jml_data.setAutoFillBackground(False)
-        self.input_jml_data.setText("")
+        self.input_jml_data.setText("10")
         self.input_jml_data.setObjectName("input_jml_data")
 
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
@@ -234,7 +237,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Instagram Tools"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Instagram Tools Lite Version"))
         self.comboBox.setItemText(0, _translate("MainWindow", "Search By Username"))
         self.comboBox.setItemText(1, _translate("MainWindow", "Search Media By HashTag"))
         self.label_4.setText(_translate("MainWindow", ".:Instagram Scraper:."))
