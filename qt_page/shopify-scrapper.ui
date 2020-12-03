@@ -45,57 +45,25 @@
     <column/>
     <column/>
    </widget>
-   <widget class="QLineEdit" name="input_username">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>440</y>
-      <width>261</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btn_submit">
     <property name="geometry">
      <rect>
-      <x>670</x>
-      <y>450</y>
+      <x>700</x>
+      <y>390</y>
       <width>191</width>
-      <height>41</height>
+      <height>121</height>
      </rect>
     </property>
     <property name="text">
      <string>Submit</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>400</y>
-      <width>151</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Masukan Username</string>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="input_jml_data">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>440</y>
-      <width>101</width>
+      <x>590</x>
+      <y>450</y>
+      <width>81</width>
       <height>41</height>
      </rect>
     </property>
@@ -109,49 +77,31 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>420</y>
-      <width>271</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <italic>true</italic>
-     </font>
-    </property>
-    <property name="text">
-     <string>Pastikan user instagram tidak private</string>
-    </property>
-   </widget>
    <widget class="QColumnView" name="columnView">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>260</x>
       <y>390</y>
-      <width>281</width>
-      <height>101</height>
+      <width>301</width>
+      <height>121</height>
      </rect>
     </property>
    </widget>
    <widget class="QColumnView" name="columnView_2">
     <property name="geometry">
      <rect>
-      <x>540</x>
+      <x>570</x>
       <y>390</y>
       <width>121</width>
-      <height>101</height>
+      <height>121</height>
      </rect>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>410</y>
+      <x>600</x>
+      <y>400</y>
       <width>71</width>
       <height>17</height>
      </rect>
@@ -163,35 +113,15 @@
      </font>
     </property>
     <property name="text">
-     <string>Jml. Data</string>
+     <string>Max Data</string>
     </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox">
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>390</y>
-      <width>191</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>Search By Username</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Search Media By HashTag</string>
-     </property>
-    </item>
    </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>420</y>
-      <width>221</width>
+      <x>40</x>
+      <y>430</y>
+      <width>201</width>
       <height>41</height>
      </rect>
     </property>
@@ -204,20 +134,47 @@
      </font>
     </property>
     <property name="text">
-     <string>.:Instagram Scraper:.</string>
+     <string>.:Shopify Scraper:.</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>430</y>
+      <width>281</width>
+      <height>71</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>410</y>
+      <width>141</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Type Shop Name</string>
     </property>
    </widget>
    <zorder>columnView_2</zorder>
    <zorder>columnView</zorder>
    <zorder>tableWidget</zorder>
-   <zorder>input_username</zorder>
    <zorder>btn_submit</zorder>
-   <zorder>label</zorder>
    <zorder>input_jml_data</zorder>
-   <zorder>label_2</zorder>
    <zorder>label_3</zorder>
-   <zorder>comboBox</zorder>
    <zorder>label_4</zorder>
+   <zorder>plainTextEdit</zorder>
+   <zorder>label_5</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
