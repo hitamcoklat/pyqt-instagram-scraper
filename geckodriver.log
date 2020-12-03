@@ -1,0 +1,77 @@
+1606774969819	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofiles7NnNL"
+
+(firefox:4613): GLib-GIO-CRITICAL **: 05:22:53.460: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+
+(firefox:4613): GLib-GIO-CRITICAL **: 05:22:53.461: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+
+(firefox:4613): GLib-GIO-CRITICAL **: 05:22:53.483: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+1606774976913	Marionette	INFO	Listening on port 40097
+1606774976949	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 203: NS_ERROR_FAILURE: Should pass a non-null uri
+1606774987125	Marionette	INFO	Stopped listening on port 40097
+1606775016330	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilesXK04H"
+
+(firefox:4977): GLib-GIO-CRITICAL **: 05:23:37.206: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+
+(firefox:4977): GLib-GIO-CRITICAL **: 05:23:37.206: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+
+(firefox:4977): GLib-GIO-CRITICAL **: 05:23:37.206: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+1606775019875	Marionette	INFO	Listening on port 33275
+1606775019949	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 203: NS_ERROR_FAILURE: Should pass a non-null uri
+1606775036428	Marionette	INFO	Stopped listening on port 33275
+1606775052138	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileXxlJtr"
+
+(firefox:5278): GLib-GIO-CRITICAL **: 05:24:13.024: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+
+(firefox:5278): GLib-GIO-CRITICAL **: 05:24:13.024: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+
+(firefox:5278): GLib-GIO-CRITICAL **: 05:24:13.024: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+1606775055708	Marionette	INFO	Listening on port 44819
+1606775055749	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606775064429	Marionette	INFO	Stopped listening on port 44819
+1606775093134	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile2MUYGe"
+
+(firefox:5575): GLib-GIO-CRITICAL **: 05:24:54.045: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+
+(firefox:5575): GLib-GIO-CRITICAL **: 05:24:54.045: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+
+(firefox:5575): GLib-GIO-CRITICAL **: 05:24:54.045: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+1606775097220	Marionette	INFO	Listening on port 33255
+1606775097250	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606775129072	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile9mX7Ft"
+
+(firefox:5904): GLib-GIO-CRITICAL **: 05:25:30.165: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+
+(firefox:5904): GLib-GIO-CRITICAL **: 05:25:30.165: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+
+(firefox:5904): GLib-GIO-CRITICAL **: 05:25:30.165: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+1606775133243	Marionette	INFO	Listening on port 33841
+1606775133291	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/bundle.460ac3b7d4224e3d2c52.js, line 1: NS_ERROR_NOT_INITIALIZED: 
+1606775140911	Marionette	INFO	Stopped listening on port 33841
+1606775141467	Marionette	INFO	Stopped listening on port 33255
+1606775530110	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileffLHBg"
+
+(firefox:6636): GLib-GIO-CRITICAL **: 05:32:11.242: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+
+(firefox:6636): GLib-GIO-CRITICAL **: 05:32:11.242: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+
+(firefox:6636): GLib-GIO-CRITICAL **: 05:32:11.243: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+1606775534283	Marionette	INFO	Listening on port 38163
+1606775534329	Marionette	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1606775574413	Marionette	INFO	Stopped listening on port 38163
+1606775596606	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile3EQ8oB"
+
+(firefox:7275): GLib-GIO-CRITICAL **: 05:33:17.615: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+
+(firefox:7275): GLib-GIO-CRITICAL **: 05:33:17.615: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+
+(firefox:7275): GLib-GIO-CRITICAL **: 05:33:17.616: g_dbus_proxy_new: assertion 'G_IS_DBUS_CONNECTION (connection)' failed
+1606775600772	Marionette	INFO	Listening on port 34643
+1606775600819	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606776615800	Marionette	INFO	Stopped listening on port 34643

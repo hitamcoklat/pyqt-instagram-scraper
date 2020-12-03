@@ -12,11 +12,11 @@ class ScrapeShopee(object):
 
     def initScrape():
 
-        options = webdriver.ChromeOptions()
-        options.add_argument('--ignore-certificate-errors')
-        options.add_argument('--incognito')
+        # options = webdriver.Firefox()
+        # options.add_argument('--ignore-certificate-errors')
+        # options.add_argument('--incognito')
         # options.add_argument('--headless')
-        wd = webdriver.Chrome(options=options)
+        wd = webdriver.Firefox()
 
         wd.get("https://shopee.co.id/daily_discover?pageNumber=1")
 
@@ -47,7 +47,7 @@ class ScrapeShopee(object):
                 # SCROLL_PAUSE_TIME = 3
 
                 # Get scroll height
-                time.sleep(1.5)
+                time.sleep(2)
                 wd.execute_script("window.scrollTo(0, 1000)")
                 time.sleep(2)
                 wd.execute_script("window.scrollTo(0, 2000)")
