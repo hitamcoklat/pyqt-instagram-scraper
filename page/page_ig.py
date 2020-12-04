@@ -29,6 +29,9 @@ class Ui_MainWindow(object):
         self.username = self.input_username.text()
         self.jmlData = self.comboBox_2.currentText()
 
+        if(self.username == ''):
+            return
+
         self.pilihanCombo = self.comboBox.currentText()
         self.btn_submit.setText("Loading...")
 
@@ -122,45 +125,33 @@ class Ui_MainWindow(object):
         MainWindow.setFixedHeight(575)
         MainWindow.setFixedWidth(903)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setObjectName("centralwidget")
 
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
         self.tableWidget.setGeometry(QtCore.QRect(0, 0, 901, 381))
-        self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setSortingEnabled(True)
 
         self.input_username = QtWidgets.QLineEdit(self.centralwidget)
         self.input_username.setGeometry(QtCore.QRect(260, 440, 261, 41))
         self.input_username.setText("")
         self.input_username.setStyleSheet("padding-left: 20px; font-size: 18px; padding-right: 20px;")
-        self.input_username.setObjectName("input_username")
 
         self.comboBox = QtWidgets.QComboBox(self.centralwidget)
         self.comboBox.setGeometry(QtCore.QRect(670, 390, 191, 41))
-        self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
 
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
         self.label_4.setGeometry(QtCore.QRect(20, 420, 221, 41))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setItalic(True)
-        font.setWeight(75)
-        self.label_4.setFont(font)
-        self.label_4.setObjectName("label_4")
+        self.label_4.setStyleSheet("font-size: 18px; font-weight: bold; font-style: italic;")
 
         jml_list = ["10", "50", "100", "150", "200"]
         self.comboBox_2 = QtWidgets.QComboBox(self.centralwidget)
         self.comboBox_2.setGeometry(QtCore.QRect(558, 440, 86, 35))
-        self.comboBox_2.setObjectName("comboBox_2")
         self.comboBox_2.setStyleSheet("font-weight: bold; text-align: center;")
         self.comboBox_2.addItems(jml_list)
 
         self.btn_submit = QtWidgets.QPushButton(self.centralwidget)
         self.btn_submit.setGeometry(QtCore.QRect(670, 450, 191, 41))
-        self.btn_submit.setObjectName("btn_submit")
         self.btn_submit.setText("Submit")
         self.btn_submit.setStyleSheet("font-size: 18px; font-weight: bold; background-color: green; color: white;")
         self.btn_submit.clicked.connect(lambda: self.loadDataInstagram())
@@ -168,33 +159,22 @@ class Ui_MainWindow(object):
 
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(260, 400, 220, 17))
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        self.label.setFont(font)
-        self.label.setObjectName("label")
+        self.label.setStyleSheet("font-weight: bold; font-size: 12px;")
 
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(260, 420, 271, 17))
         font = QtGui.QFont()
         font.setItalic(True)
         self.label_2.setFont(font)
-        self.label_2.setObjectName("label_2")
 
         self.columnView = QtWidgets.QColumnView(self.centralwidget)
         self.columnView.setGeometry(QtCore.QRect(250, 390, 281, 101))
-        self.columnView.setObjectName("columnView")
         self.columnView_2 = QtWidgets.QColumnView(self.centralwidget)
         self.columnView_2.setGeometry(QtCore.QRect(540, 390, 121, 101))
-        self.columnView_2.setObjectName("columnView_2")
 
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
         self.label_3.setGeometry(QtCore.QRect(570, 410, 71, 17))
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_3.setFont(font)
-        self.label_3.setObjectName("label_3")
+        self.label_3.setStyleSheet("font-size: 12px; font-weight: bold;")
 
         self.columnView_2.raise_()
         self.columnView.raise_()
@@ -209,42 +189,24 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 903, 22))
-        self.menubar.setObjectName("menubar")
         self.menuExit = QtWidgets.QMenu(self.menubar)
-        self.menuExit.setObjectName("menuExit")
         self.menuView = QtWidgets.QMenu(self.menubar)
-        self.menuView.setObjectName("menuView")
         self.menuPage = QtWidgets.QMenu(self.menubar)
-        self.menuPage.setObjectName("menuPage")
         self.menuAbout = QtWidgets.QMenu(self.menubar)
-        self.menuAbout.setObjectName("menuAbout")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
         self.actionExit = QtWidgets.QAction(MainWindow)
-        self.actionExit.setObjectName("actionExit")
         # self.actionExit = Q
 
         # Menu Top
         self.actionTable = QtWidgets.QAction(MainWindow)
-        self.actionTable.setObjectName("actionTable")
-
         self.menuPageShopify = QtWidgets.QAction(MainWindow)
-        self.menuPageShopify.setObjectName("menuPageShopify")
-
         self.menuPageInstagram = QtWidgets.QAction(MainWindow)
-        self.menuPageInstagram.setObjectName("menuPageInstagram")
-
         self.actionChart = QtWidgets.QAction(MainWindow)
-        self.actionChart.setObjectName("actionChart")
-
         self.actionPage = QtWidgets.QAction(MainWindow)
-        self.actionPage.setObjectName("actionPage")
-
         self.actionAbout = QtWidgets.QAction(MainWindow)
-        self.actionAbout.setObjectName("actionAbout")
 
         # Daftarkan ke list menu panel top
         self.menuExit.addAction(self.actionExit)
@@ -260,14 +222,12 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuPage.menuAction())
         self.menubar.addAction(self.menuAbout.menuAction())
 
-        # self.actionTable.trigger(self.exportCSV)
-
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Instagram Tools Lite Version"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Scrape Tools Lite Version"))
         self.comboBox.setItemText(0, _translate("MainWindow", "Search By Username"))
         self.comboBox.setItemText(1, _translate("MainWindow", "Search Media By HashTag"))
         self.label_4.setText(_translate("MainWindow", ".:Instagram Scraper:."))

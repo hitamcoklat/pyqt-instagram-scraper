@@ -17,6 +17,10 @@ class Ui_MainWindow(object):
         print('submit shopify')
         shopName = self.plainTextEdit.toPlainText()
         jmlData = self.comboBox_2.currentText()
+
+        if(shopName == ''):
+            return
+
         s = ShopifyScrape(int(jmlData))
         self.dataMedia = s.main(shopName)
 
@@ -209,7 +213,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Scrape Tools Lite Version"))
         self.btn_submit.setText(_translate("MainWindow", "Submit"))
         self.label_3.setText(_translate("MainWindow", "Max Data"))
         self.label_4.setText(_translate("MainWindow", ".:Shopify Scraper:."))
